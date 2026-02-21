@@ -45,7 +45,9 @@
     <!-- Work section moved to work.html -->
     <section id="contact">
       <h2>Contact</h2>
-      <form id="contact-form">
+      <form id="contact-form" action="https://formspree.io/f/xreaykda" method="POST">
+          <!-- Honeypot field for spam protection -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <label for="email">Email:</label>

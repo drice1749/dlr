@@ -1,3 +1,7 @@
+/* Hide honeypot field for spam protection */
+input[name="_gotcha"] {
+  display: none !important;
+}
 .gallery img {
   opacity: 0;
   transform: translateY(20px);
