@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Work - DLR Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="profile-photo-container">
+      <img src="profile.png" alt="My photo" class="profile-photo">
+    </div>
+    <h1>My Work</h1>
+    <h2 style="font-size:1.1rem;margin-top:0.5rem;color:#a7d7a3;">Danny Rice</h2>
+    <p>Here are a few examples of network and infrastructure projects completed.</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="work.html" style="background:#7fa07a;color:#234032;">My Work</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section>
+      <div class="gallery" id="gallery">
+        <img src="mywork/0743F318-186A-4150-B980-DC89491A2D57_1_105_c.jpeg" alt="My work: 0743F318-186A-4150-B980-DC89491A2D57_1_105_c.jpeg">
+        <img src="mywork/51F0FD60-B6A1-49CF-A22D-D84A6ED0C179_1_105_c.jpeg" alt="My work: 51F0FD60-B6A1-49CF-A22D-D84A6ED0C179_1_105_c.jpeg">
+        <img src="mywork/63761F00-A023-48F5-9348-E7FCB4E20B73_1_105_c.jpeg" alt="My work: 63761F00-A023-48F5-9348-E7FCB4E20B73_1_105_c.jpeg">
+        <img src="mywork/6848C7D5-DF95-4443-AC5B-E653453110BD_1_105_c.jpeg" alt="My work: 6848C7D5-DF95-4443-AC5B-E653453110BD_1_105_c.jpeg">
+        <img src="mywork/6C886ED3-94E0-4673-AB65-D3C6F7796DE5_1_105_c.jpeg" alt="My work: 6C886ED3-94E0-4673-AB65-D3C6F7796DE5_1_105_c.jpeg">
+        <img src="mywork/9B492A2F-78AD-408C-B810-8613F3C9A93D_4_5005_c.jpeg" alt="My work: 9B492A2F-78AD-408C-B810-8613F3C9A93D_4_5005_c.jpeg">
+        <img src="mywork/9D7D9D4B-BD69-4787-A198-C627B88143F7_1_105_c.jpeg" alt="My work: 9D7D9D4B-BD69-4787-A198-C627B88143F7_1_105_c.jpeg">
+        <img src="mywork/9F3E1438-682D-4F75-96AA-04015391CC87_1_105_c.jpeg" alt="My work: 9F3E1438-682D-4F75-96AA-04015391CC87_1_105_c.jpeg">
+        <img src="mywork/A36B6CD0-DB90-471B-A7CB-A4F611DE3B87_1_105_c.jpeg" alt="My work: A36B6CD0-DB90-471B-A7CB-A4F611DE3B87_1_105_c.jpeg">
+        <img src="mywork/CD096E96-863D-40E8-B23C-4011C0D1A045_1_105_c.jpeg" alt="My work: CD096E96-863D-40E8-B23C-4011C0D1A045_1_105_c.jpeg">
+        <img src="mywork/DE084E40-20AA-4A3D-8647-75884D6981F6_1_105_c.jpeg" alt="My work: DE084E40-20AA-4A3D-8647-75884D6981F6_1_105_c.jpeg">
+        <img src="mywork/F6AEEBEF-4675-4725-BEF2-A2462E7972C3_1_105_c.jpeg" alt="My work: F6AEEBEF-4675-4725-BEF2-A2462E7972C3_1_105_c.jpeg">
+        <img src="mywork/IMG_4632.jpeg" alt="My work: IMG_4632.jpeg">
+        <img src="mywork/IMG_6427.jpeg" alt="My work: IMG_6427.jpeg">
+        <img src="mywork/IMG_8097.jpeg" alt="My work: IMG_8097.jpeg">
+        <img src="mywork/Untitled 2.png" alt="My work: Untitled 2.png">
+    </div>
+    </section>
+  </main>
+</main>
+  <button id="backToTop" title="Back to top">↑</button>
+  <footer>
+    <p>&copy; 2026 DLR Solutions. All rights reserved.</p>
+  </footer>
+</body>
+<script>
+// Fade-in animation for gallery images
+document.querySelectorAll('.gallery img').forEach((img, i) => {
+  img.style.animationDelay = (i * 0.08) + 's';
+});
+
+// Back to top button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+  backToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
+});
+backToTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+<script>
+// Dynamically load all images in the mywork folder
+const gallery = document.getElementById('gallery');
+const imageCount = 30; // Arbitrary upper limit for images
+for (let i = 1; i <= imageCount; i++) {
+  const img = document.createElement('img');
+  img.src = `mywork/network${i}.jpg`;
+  img.alt = `Network work ${i}`;
+  img.onerror = function() { this.style.display = 'none'; };
+  gallery.appendChild(img);
+}
+</script>
+</html>
